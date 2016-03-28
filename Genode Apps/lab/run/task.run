@@ -1,0 +1,18 @@
+build "core init app/task"
+create_boot_directory
+install_config {
+ <config>
+  <parent-provides>
+   <service name="LOG"/>
+   <service name="RM"/>
+  </parent-provides>
+  <default-route>
+   <any-service> <parent/> </any-service>
+  </default-route>
+  <start name="task">
+    <resource name="RAM" quantum="25M"/>
+  </start> </config>
+}
+build_boot_image "core init task"
+append qemu_args "-nographic -m 64"
+run_genode_until {child "task" exited with exit value 0} 10
