@@ -1,0 +1,12 @@
+{
+  "name": "package-installer",
+  "version": "0.1.1",
+  "author": "Md Shifuddin Al Masud",
+  "summary": "Install and remove custom packages",
+  "license": "Apache 2.0",
+  "source": "",
+  "project_page": "https://gitlab.lrz.de/tum-i5-sysad/puppet-modules",
+  "issues_url": "https://gitlab.lrz.de/tum-i5-sysad/puppet-modules/issues",
+  "dependencies": [ ]
+}
+
