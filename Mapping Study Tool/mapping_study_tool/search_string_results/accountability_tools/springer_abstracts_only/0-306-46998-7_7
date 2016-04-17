@@ -1,0 +1,2 @@
+                          <p class="Para">To overcome the difficulties of correct secure systems design, we propose formal modelling using the object-oriented modelling language UML. Specifically, we consider the problem of accountability through auditing.</p>
+                          <p class="Para">We explain our method at the example of a part of the Common Electronic Purse Specifications (CEPS), a candidate for an international electronic purse standard, indicate possible vulnerabilities and present concrete security advice on that system.</p>

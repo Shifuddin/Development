@@ -1,0 +1,55 @@
+table {
+	border-collapse: collapse;
+}
+table, td, th{
+	border: 1px solid #000000;
+	margin-top:1em;
+	margin-bottom:1em;
+}
+table.category{
+	float:left;
+	margin-left:10px;
+}
+#paper_list td{
+	border:none
+}
+#paper {
+	max-width:900px;
+}
+
+#overview th {
+	font-weight: normal;
+	color:white;
+	padding:1em;
+	width:33%;
+}
+
+#overview .accept{
+	background-color:green;
+}
+
+#overview .reject {
+	background-color:red;
+}
+
+#overview .unclear {
+	background-color:royalblue;
+}
+
+#overview th a {
+	color:white;
+	text-decoration:none;
+}
+
+#overview th a:hover {
+/*	font-weight:bold;*/
+	text-decoration:underline;
+}
+
+#highscore {
+	float:right;
+}
+#highscore th, #highscore td {
+	padding-left: 1em;
+	padding-right: 1em;
+}

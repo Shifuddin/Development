@@ -1,0 +1,13 @@
+TODOs
+
+2015/11/10
+
+1) Install mapping study tool in a virtual machine
+2) Study the source code
+3) Test the import process
+4) Change the import process to include the publication year
+5) Find a way to change the current database to either:
+	a) include the publication date
+	b) add a table to the current database that only contains the ID and the
+	publication date (plus possibly the title to validate the mappnig)
+6) Find a way to validate the results 

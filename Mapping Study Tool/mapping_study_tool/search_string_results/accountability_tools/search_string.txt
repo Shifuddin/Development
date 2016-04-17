@@ -1,0 +1,68 @@
+  Generic search string:
+  accountability AND (privacy OR safety OR security) AND (tool OR implementation OR application)
+
+  IEEE:
+  (Search in Metadata only)
+
+  accountability AND privacy AND tool				25
+  accountability AND safety AND tool				6
+  accountability AND security AND tool				28
+    
+  accountability AND privacy AND implementation			20
+  accountability AND safety AND implementation			8
+  accountability AND security AND implementation		47
+
+  accountability AND privacy AND application			67
+  accountability AND safety AND application			13
+  accountability AND security AND application			107
+								= 321
+								  
+								  
+								  
+  scopus
+
+  (
+  TITLE-ABS(accountability AND privacy AND tool ) OR 
+  TITLE-ABS(accountability AND safety AND tool) OR 
+  TITLE-ABS(accountability AND security AND tool) OR 
+
+  TITLE-ABS(accountability AND privacy AND implementation ) OR 
+  TITLE-ABS(accountability AND safety AND implementation) OR 
+  TITLE-ABS(accountability AND security AND implementation) OR 
+
+  TITLE-ABS(accountability AND privacy AND application ) OR 
+  TITLE-ABS(accountability AND safety AND application) OR 
+  TITLE-ABS(accountability AND security AND application)  
+
+  ) AND ( LIMIT-TO(SUBJAREA,"COMP" ) ) 				
+								= 211
+
+
+  ACM:
+
+  Title:
+  accountability  privacy  tool					0			
+  accountability  safety  tool					0		
+  accountability  security  tool				0		
+    
+  accountability  privacy  implementation			0
+  accountability  safety  implementation			0		
+  accountability  security  implementation			0			
+
+  accountability  privacy  application				0	
+  accountability  safety  application				0
+  accountability  security  application				0
+
+  Abstract:
+  accountability  privacy  tool					11			
+  accountability  safety  tool					0
+  accountability  security  tool				6
+    
+  accountability  privacy  implementation			8	
+  accountability  safety  implementation			2	
+  accountability  security  implementation			9			
+
+  accountability  privacy  application				13		
+  accountability  safety  application				3		
+  accountability  security  application				21
+								= 73

@@ -1,0 +1,7 @@
+                          <p class="Para">A method using expert judgement for the evaluation of software quality is presented. The underlying principle of the approach is the encoding of experts' tacit knowledge into probabilistic measures associated with the achievement level of software quality attributes. An aggregated quality measure is obtained based on preference statements related to the quality attributes. The technical objectives of the paper are</p>
+                          <p class="Para">• to develop of a generic and operationally feasible measurement technique to transform the tacit knowledge of a software expert to a probability distribution depicting his/her uncertainty of the level of achievement related to a quality attribute;</p>
+                          <p class="Para">• to develop rules for the construction of a consensus probability measure based on expert-specific probability measures;</p>
+                          <p class="Para">• to derive a framework for specifying software quality strategy and for evaluating the acceptance of a software produced in a software development process;</p>
+                          <p class="Para">The above technical developments are used to support group decision-making regarding</p>
+                          <p class="Para">• the launch or implementation decision of a software version;</p>
+                          <p class="Para">• the allocation of resources during the software development process.</p>
