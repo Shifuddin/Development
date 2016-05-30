@@ -1,0 +1,9 @@
+c:\users\student\documents\visual studio 2013\Projects\crosschecker\crosschecker\bin\Debug\crosschecker.exe.config
+c:\users\student\documents\visual studio 2013\Projects\crosschecker\crosschecker\bin\Debug\crosschecker.exe
+c:\users\student\documents\visual studio 2013\Projects\crosschecker\crosschecker\bin\Debug\crosschecker.pdb
+c:\users\student\documents\visual studio 2013\Projects\crosschecker\crosschecker\obj\Debug\crosschecker.Form1.resources
+c:\users\student\documents\visual studio 2013\Projects\crosschecker\crosschecker\obj\Debug\crosschecker.Properties.Resources.resources
+c:\users\student\documents\visual studio 2013\Projects\crosschecker\crosschecker\obj\Debug\crosschecker.csproj.GenerateResource.Cache
+c:\users\student\documents\visual studio 2013\Projects\crosschecker\crosschecker\obj\Debug\crosschecker.exe
+c:\users\student\documents\visual studio 2013\Projects\crosschecker\crosschecker\obj\Debug\crosschecker.pdb
+C:\Users\Student\documents\visual studio 2013\Projects\crosschecker\crosschecker\obj\Debug\crosschecker.csprojResolveAssemblyReference.cache
