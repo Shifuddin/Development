@@ -1,0 +1,43 @@
+Description:
+** Jenkins plugin to visualize integrated results from infer, cpp check and coverity check 
+
+Authors Information:
+** Md Shifuddin Al (shifuddin.masud@gmail.com)
+
+Install/Uninstall:
+** Open Jenkins plugin manager.
+** Install/Uninstall plugin (hpi file) through advance tab.
+
+Pre-requisites:
+** Infer, cppcheck and coverity check are required.
+
+Run/How to Use:
+** Create a new task at Jenkins.
+** Load task's configure page.
+** Add a shell build step giving this 'cd /auto_analyzer_etc_dir_path && sudo java engine -src test/src/example.c -wf "CodeReview" -conf test/configFile.txt' command
+** Add a post build action and select 'Publish Integration Tool Result'.
+** Insert autoanalyzer temp dir path as Report Home.
+** Ignore all other input options (Future work)
+** Apply and save the window.
+** Visit project page and build once.
+** Click on the build after successful operation and select 'Integration Tool Results'.
+
+Modules:
+** Build Step
+	*** Run command written as shell build step at each build operation invoked.
+** Publisher
+	*** Responsible for Plugin setup.
+	*** Executed when plugin get updated or installed.
+	*** Creates user infaces here e.g. Report Home and sends to build action. 
+** BuildAction
+	*** Resonsible for each user initiated build.
+	*** Receives several parameters from publisher.
+	*** Performs desired action e.g. reporting by using some additional helper java class files.
+** Report
+	*** Invokes auto analyzer's temp directory.
+	*** Retrieves all sub directories.
+	*** Reads json report files from different test engines under each sub directory.
+	*** Parse Json files, extract and show reformatted result on Jenkins page using jelly files. 
+** Source Code View
+	*** Display source code with particular line marked where error occurs.
+  

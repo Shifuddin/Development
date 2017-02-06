@@ -1,0 +1,236 @@
+<?jelly escape-by-default='true'?>
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:l="/lib/layout">
+    
+    <style type="text/css">
+	table {
+    	border: 2px solid #ddd;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding-left: 4px;
+}
+
+td.bold{
+font-weight: bold;
+}
+
+tr:nth-child(even){background-color: #d1e0e0}
+
+th {
+    background-color: #cc3300;
+    color: white;
+}
+</style>
+    
+    <l:layout>
+        <st:include it="${it.build}" page="sidepanel.jelly"/>
+        <l:main-panel>
+            <h1 style="text-align:center">${it.displayName}</h1>
+            <h3>${it.seeWhat()}</h3>
+            <h3>${it.getState()}</h3>
+            
+        	<j:set var="directories" value="${it.getDirectories()}"/>
+        	<j:forEach var="directory" items="${directories}">
+        		<h1>${it.getConfigName(directory)}</h1>
+        		<j:set var="files" value="${it.getFiles(directory)}"/>
+        		<j:forEach var="file" items="${files}">
+        			<h3>${it.getTableName(file)}</h3>
+        			
+        			<j:set var="tablename" value="${it.getTableName(file)}"/>
+        			
+        			<j:if test="${tablename.indexOf('Tools Report') != -1}">
+        			
+        			<j:set var="tables" value="${it.getResultTools(file)}"/>
+        			
+        			<j:forEach var="table" items="${tables}">
+        			
+        			<h4>${it.getSmallTableName(table)}</h4>
+        			<table>
+        			
+        			<tr>
+								<th>${"Error No."}</th>
+								<th>${"Error Type"}</th>
+								<th>${"File"}</th>
+								<th>${"Line"}</th>
+					</tr>
+					<j:set var="number" value="${it.getStartPoint()}"/>
+					
+        			<j:forEach var="line" items="${table}">
+						
+        				<j:set var="textline" value="${it.getTextLine(line)}"/>
+						<j:set var="type" value="${it.getType(line)}"/>
+						<j:set var="file" value="${it.getFile(line)}"/>
+						<j:set var="linenm" value="${it.getLine(line)}"/>
+						<j:set var="qualifier" value="${it.getQualifier(line)}"/>
+						<j:set var="procudure" value="${it.getProcedure(line)}"/>
+						
+						<j:if test="${type.indexOf('infer 9endTableT') == -1 &amp;&amp; type.indexOf('cppcheck 9endTableT') == -1}">
+						<tr>
+							
+								<td rowspan="2">${"E"}${number}</td>
+								
+							
+							
+							<td>${type}</td>
+							<td><a href="${line}">${file}</a></td>
+							<td>${linenm}</td>
+							
+							</tr>
+							<tr>
+							<td colspan="3">${qualifier} (Procedure: ${procudure})</td>
+							</tr>
+				
+							
+							
+							
+					<j:set var="number" value="${number+1}"/>
+							
+        			</j:if>		
+        			</j:forEach>
+        			
+        			</table>
+	            		<br/>
+	   
+        			
+        			
+        			
+        			
+        			
+        			
+        			
+        			
+        			
+        			
+        			
+        			</j:forEach>
+        			
+        			<j:set var="newtable" value="${it.getLogicalMerge(tables)}"/>
+					
+					<h4>Merged Tools</h4>
+					
+					<table>
+        			
+        			<tr>
+								<th>${"Error No."}</th>
+								<th>${"Error Type"}</th>
+								<th>${"File"}</th>
+								<th>${"Line"}</th>
+					</tr>
+					<j:set var="number" value="${it.getStartPoint()}"/>
+					
+        			<j:forEach var="line" items="${newtable}">
+						
+        				<j:set var="textline" value="${it.getTextLine(line)}"/>
+						<j:set var="type" value="${it.getType(line)}"/>
+						<j:set var="file" value="${it.getFile(line)}"/>
+						<j:set var="linenm" value="${it.getLine(line)}"/>
+						<j:set var="qualifier" value="${it.getQualifier(line)}"/>
+						<j:set var="procudure" value="${it.getProcedure(line)}"/>
+						
+						<j:if test="${type.indexOf('infer 9endTableT') == -1 &amp;&amp; type.indexOf('cppcheck 9endTableT') == -1}">
+						<tr>
+							
+								<td rowspan="2">${"E"}${number}</td>
+								
+							
+							
+							<td>${type}</td>
+							<td><a href="${line}">${file}</a></td>
+							<td>${linenm}</td>
+							
+							</tr>
+							<tr>
+							<td colspan="3">${qualifier} (Procedure: ${procudure})</td>
+							</tr>
+						
+							
+					<j:set var="number" value="${number+1}"/>
+							
+        			</j:if>		
+        			</j:forEach>
+        			
+        			</table>
+					
+        			
+        			</j:if>
+        			
+        			<j:if test="${tablename.indexOf('Tools Report') == -1}">
+        			
+        			
+        			
+        			<j:set var="table" value="${it.getResult(file)}"/>
+        			<table>
+        			
+        			<tr>
+								<th>${"Error No."}</th>
+								<th>${"Error Type"}</th>
+								<th>${"File"}</th>
+								<th>${"Line"}</th>
+					</tr>
+					<j:set var="number" value="${it.getStartPoint()}"/>
+					
+        			<j:forEach var="line" items="${table}">
+						
+        				<j:set var="textline" value="${it.getTextLine(line)}"/>
+						<j:set var="type" value="${it.getType(line)}"/>
+						<j:set var="file" value="${it.getFile(line)}"/>
+						<j:set var="linenm" value="${it.getLine(line)}"/>
+						<j:set var="qualifier" value="${it.getQualifier(line)}"/>
+						<j:set var="procudure" value="${it.getProcedure(line)}"/>
+						<j:set var="status" value="${it.getStatus(line)}"/>
+						<tr>
+							
+							<j:if test="${status.indexOf('x1k2?.') == -1}">
+								<td rowspan="3">${"E"}${number}</td>
+								
+							</j:if>
+							
+							<j:if test="${status.indexOf('x1k2?.') != -1}">
+								<td rowspan="2">${"E"}${number}</td>
+								
+							</j:if>
+							
+							<td>${type}</td>
+							<td><a href="${line}">${file}</a></td>
+							<td>${linenm}</td>
+							
+							</tr>
+							<tr>
+							<td colspan="3">${qualifier} (Procedure: ${procudure})</td>
+							</tr>
+				<j:if test="${status.indexOf('x1k2?.') == -1}">
+					
+					<tr>
+						<j:if test="${status == 0}">
+							<td colspan="3"><font color="blue">Error Varified</font></td>
+						</j:if>
+						<j:if test="${status == 1}">
+							<td colspan="3"><font color="blue">Todo</font></td>
+						</j:if>
+						<j:if test="${status == 2}">
+							<td colspan="3"><font color="red">False Alarm</font></td>
+						</j:if>
+					</tr>
+				</j:if>
+							
+							
+							
+					<j:set var="number" value="${number+1}"/>
+							
+        					
+        			</j:forEach>
+        			
+        			</table>
+	            		<br/>
+	            </j:if>
+        		</j:forEach>
+				<br/>
+        	</j:forEach>
+        	
+        	
+        	
+       </l:main-panel>
+   </l:layout>
+</j:jelly>

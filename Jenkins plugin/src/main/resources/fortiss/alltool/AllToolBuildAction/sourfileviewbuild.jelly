@@ -1,0 +1,102 @@
+<?jelly escape-by-default='true'?>
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:l="/lib/layout">
+<style type="text/css">
+
+table {
+    border-collapse: collapse;
+    width: 85%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+td.bold{
+font-weight: bold;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.intro {
+    background-color: #ffcc66;
+    font-weight: bold;
+}
+.pad_b{
+	 padding-bottom: 10px;
+}
+.pad_r{
+	 padding-right: 40px;
+}
+.padcolor{
+	background-color: #ffcc66;
+	padding-right: 40px;
+	font-weight: bold;
+}
+</style>
+    
+    <l:layout title="${%FileView}">
+<st:include it="${it.build}" page="sidepanel.jelly"/>
+        <l:main-panel>
+            <h1>${%All Tools Source Code Review}</h1>
+            
+
+         <table>
+  			
+  			<tr>
+    			<td class="bold">File Name:</td>
+    			<td>${it.getFileName()}</td>
+    			<td>${it.getConfigFileName()}</td>
+    		</tr>
+  			
+  
+		</table>
+		
+		<table>
+			<tr>
+    			<th>Code Snippet</th>
+  			</tr>
+ 			<tr>
+ 			<td>
+ 				<a class="pad_b">.</a>
+ 				<br/>
+            	<a class="pad_b">.</a>
+		   		
+		   		<j:set var="mid" value="${it.getLineNumber()}"/>
+           		<j:set var="lines" value="${it.getSource()}"/>
+           		<j:set var="number" value="${it.getStartPoint()}"/>
+           	
+           		<j:forEach var="line" items="${lines}">
+           			
+           			<j:if test="${number == mid}">
+						<pre>
+             				<a class ="padcolor">${number}</a> 
+            				<a class ="intro">${line}</a> 
+            			</pre>
+					</j:if>
+				
+					<j:if test="${number != mid}">
+						<pre>
+             				<a class="pad_r">${number}</a> 
+            				<a>${line}</a> 
+            			</pre>
+					</j:if>
+					<j:set var="number" value="${number+1}"/>
+             	</j:forEach>
+             	<br/>
+            	<a class="pad_b">.</a>
+ 				<br/>
+            	<a class="pad_b">.</a>
+
+     		</td>
+     	</tr>
+     
+   </table>        
+  </l:main-panel>
+ </l:layout>
+</j:jelly>
